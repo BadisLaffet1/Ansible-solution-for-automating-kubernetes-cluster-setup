@@ -1,0 +1,28 @@
+---
+- hosts: Controller:Workers  # Specify the group name here, not individual hosts
+  become: yes
+  become_user: root
+  vars:
+    ansible_become_pass: "root"
+  vars_files:
+    - ../../vars.yml
+  tasks:
+    - name: Create the kube user
+      user: 
+        name: kube
+        state: present
+        createhome: yes
+        shell: /bin/bash
+
+    - name: Add kube user to sudo profiles and enable no password
+      lineinfile:
+        dest: /etc/sudoers
+        line: 'kube ALL=(ALL) NOPASSWD: ALL'
+        validate: 'visudo -cf %s'
+      become: yes  # This task requires elevated privileges
+
+    - name: Set ssh key for kube user
+      authorized_key:
+        user: kube
+        key: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
+
