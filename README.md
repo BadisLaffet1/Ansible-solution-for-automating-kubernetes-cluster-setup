@@ -3,9 +3,9 @@
 
 This Ansible project automates the setup of a Kubernetes cluster using Ansible playbooks. It simplifies the process of configuring the Kubernetes master and joining worker nodes to the cluster.
 
-This Ansible project was inspired by a tutorial created by Chad Crouch.
+This Ansible project was inspired by Chad Crouch workings in opensourcegeeks.
 
-Done after following the tutorial on OpenSourceGeeks.
+Char Crouch is a GoLang Fanatic & FullStack Geek experienced in multiple enterprise environments. he has a huge passion for the open-source world specifically Linux and Opensource Software.
 
 
 
