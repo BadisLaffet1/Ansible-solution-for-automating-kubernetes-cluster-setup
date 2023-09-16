@@ -75,6 +75,11 @@ Finally, run the workers.yml playbook to join the worker nodes to the Kubernetes
 
 Your Kubernetes cluster should now be set up and ready to use.
 
+
+```bash
+ansible-playbook -i inventory.ini workers.yml
+```
+
 Ansible Playbooks
 This project includes several Ansible playbooks to automate the Kubernetes setup process:
 
